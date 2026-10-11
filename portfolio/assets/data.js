@@ -32,7 +32,7 @@ window.BD = {
     },
     {
       id: "rendezveny",
-      name: "Rendezvényhelyszínek",
+      name: "Rendezvény\u00ADhelyszínek",
       short: "Rendezvény",
       kicker: "Rendezvényszervezőknek és látványtervezőknek",
       headline: "Az elrendezés a digitális térben kezdődik.",
@@ -93,7 +93,7 @@ window.BD = {
   services: [
     {
       id: "pano360", group: "elmeny", name: "360°-os panorámakép", excel: "360 panoráma képek",
-      img: "assets/img/svc-pano360.jpg", imgSeg: { szinhaz: "assets/img/szinhaz-pano360.jpg", rendezveny: "assets/img/rendezveny-pano360.jpg", muzeum: "assets/img/muzeum-pano360.jpg" }, pano: "assets/pano/szalloda-lakosztaly.jpg",
+      img: "assets/img/svc-pano360.jpg", imgSeg: { szinhaz: "assets/img/szinhaz-pano360.jpg", rendezveny: "assets/img/rendezveny-pano360.jpg", muzeum: "assets/img/muzeum-pano360.jpg" },
       mi: "Egyetlen álláspontból készült, minden irányba körbenézhető kép.",
       mire: "Helyiségek, vendégterek, kiállítások és helyszínek látványos bemutatására, webes és közösségi tartalomként.",
       kulonbseg: "Állókép egy adott pontról. Nem videó, és nem szabadon bejárható 3D tér.",
@@ -147,7 +147,7 @@ window.BD = {
     },
     {
       id: "berepulo", group: "elmeny", name: "Virtuális berepülő videó", excel: "Virtuális berepülő videó",
-      img: "assets/img/svc-berepulo.jpg", imgSeg: { szinhaz: "assets/img/szinhaz-berepulo.jpg", szalloda: "assets/img/szalloda-berepulo.jpg", muzeum: "assets/img/muzeum-berepulo.jpg" }, video: "assets/video/szinhaz-berepulo.mp4",
+      img: "assets/img/svc-berepulo.jpg", imgSeg: { szinhaz: "assets/img/szinhaz-berepulo.jpg", szalloda: "assets/img/szalloda-berepulo.jpg", muzeum: "assets/img/muzeum-berepulo.jpg" },
       mi: "A digitális modellből előre megtervezett kameraúttal renderelt videó.",
       mire: "Látványos marketingre, bemutatókra és vezetett térbemutatásra.",
       kulonbseg: "A néző egy előre megszerkesztett kameraútvonalat követ. A minőséget a modell, a textúrák, a fények és az utómunka határozzák meg.",
@@ -187,7 +187,7 @@ window.BD = {
     },
     {
       id: "dronvideo", group: "legi", name: "Drónvideó", excel: "Drón felvétel videó",
-      img: "assets/img/svc-dronvideo.jpg", imgSeg: { rendezveny: "assets/img/rendezveny-dronvideo.jpg", szalloda: "assets/img/szalloda-dronvideo.jpg" }, video: "assets/video/kastely-dron.mp4",
+      img: "assets/img/svc-dronvideo.jpg", imgSeg: { rendezveny: "assets/img/rendezveny-dronvideo.jpg", szalloda: "assets/img/szalloda-dronvideo.jpg" },
       mi: "Drónnal készített mozgóképes légi felvétel.",
       mire: "Szállodák, rendezvényhelyszínek és épületek dinamikus bemutatására, a környezet és a megközelítés érzékeltetésére.",
       kulonbseg: "Mozgóképes narratívát ad, míg a drónfotó egy-egy pillanatot rögzít. A repülési feltételeket minden helyszínen ellenőrizni kell.",

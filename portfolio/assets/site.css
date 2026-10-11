@@ -69,6 +69,7 @@ h1 em, h2 em { font-style: italic; color: var(--brass-2); }
 .lead { font-size: clamp(17px, 1.5vw, 21px); line-height: 1.55; max-width: 62ch; }
 .sec-head { display: grid; grid-template-columns: 1fr; gap: 18px; margin-bottom: clamp(36px, 5vw, 64px); }
 .sec-head.split { grid-template-columns: 1.1fr 1fr; align-items: end; gap: 48px; }
+@media (max-width: 860px) { .sec-head.split { grid-template-columns: 1fr; gap: 18px; } }
 
 /* ---------- nav */
 .nav {
@@ -119,6 +120,7 @@ h1 em, h2 em { font-style: italic; color: var(--brass-2); }
 .hero .copy { position: absolute; left: 0; right: 0; bottom: clamp(70px, 12vh, 140px); pointer-events: none; z-index: 3; }
 .hero .copy .wrap > * { pointer-events: auto; }
 .hero h1 { max-width: 12ch; margin: 18px 0 22px; font-size: clamp(44px, 6.8vw, 100px); }
+.seg-mode .hero h1 { max-width: 15ch; font-size: clamp(38px, 5.2vw, 78px); }
 .hero .lead { color: #d9d3c9; max-width: 46ch; }
 .btns { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
 .btn {
@@ -198,8 +200,8 @@ h1 em, h2 em { font-style: italic; color: var(--brass-2); }
 .seg-card::after { content: ""; position: absolute; inset: 0; z-index: -1; background: linear-gradient(0deg, rgba(8, 10, 13, 0.92) 8%, rgba(8, 10, 13, 0.1) 62%); }
 .seg-card:hover img { transform: scale(1.05); }
 .seg-card .in { padding: 22px; }
-.seg-card .k { font-family: var(--mono); font-size: 11px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--brass-2); }
-.seg-card h3 { margin: 8px 0 10px; font-size: clamp(22px, 1.85vw, 30px); overflow-wrap: anywhere; }
+.seg-card .k { display: block; font-family: var(--mono); font-size: 10.5px; line-height: 1.5; letter-spacing: 0.1em; text-transform: uppercase; color: var(--brass-2); }
+.seg-card h3 { margin: 8px 0 10px; font-size: clamp(22px, 1.85vw, 30px); }
 .seg-card p { margin: 0 0 14px; font-size: 14.5px; color: #d6d0c6; }
 .fitcount { display: flex; gap: 12px; font-size: 12.5px; color: #cfc9bf; }
 .dot { display: inline-block; width: 9px; height: 9px; border-radius: 50%; margin-right: 6px; vertical-align: 0; }

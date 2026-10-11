@@ -127,8 +127,9 @@
     $("#segCards").appendChild(a);
   });
   if (SEG) {
-    $("#segCards").style.gridTemplateColumns = "1fr";
-    $("#segCards .seg-card").style.minHeight = "520px";
+    document.body.classList.add("seg-mode");
+    $("#celcsoportok").style.display = "none";
+    document.querySelectorAll('a[href="#celcsoportok"]').forEach(function (a) { a.setAttribute("href", "#ch-" + SEG); a.textContent = seg(SEG).name; });
   }
 
   var chapters = $("#chapters");

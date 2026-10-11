@@ -94,7 +94,7 @@
   /* demos */
   add("", '<div class="pad"><div class="two"><div><div class="eyebrow">Interaktív bemutatók</div><h2 style="margin-top:24px">Böngészőben, <em>telepítés nélkül.</em></h2></div><p class="lead" style="font-size:25px">A portfólió webes változatában a túrák és a pontfelhők élőben bejárhatók. Ilyen formában kapja meg az ügyfél is.</p></div>' +
     '<div class="demos">' +
-    '<div class="media"><img src="' + (SEG === "szalloda" ? "assets/img/szalloda-tura.jpg" : SEG === "muzeum" ? "assets/img/muzeum-tura.jpg" : "assets/img/svc-tura.jpg") + '" alt="">' + TAG + '<div class="cap"><b>Virtuális túra panorámapontokkal</b><span>Körbenézés húzással, továbblépés a pontokra kattintva</span></div></div>' +
+    '<div class="media"><img src="' + (SEG === "szalloda" ? "assets/img/szalloda-tura.jpg" : SEG === "muzeum" ? "assets/img/muzeum-tura.jpg" : SEG === "rendezveny" ? "assets/img/rendezveny-tura.jpg" : "assets/img/svc-tura.jpg") + '" alt="">' + TAG + '<div class="cap"><b>Virtuális túra panorámapontokkal</b><span>Körbenézés húzással, továbblépés a pontokra kattintva</span></div></div>' +
     '<div class="media"><img src="' + (SEG === "rendezveny" ? "assets/img/rendezveny-pontfelho-terv.jpg" : "assets/img/svc-repulheto.jpg") + '" alt="">' + TAG + '<div class="cap"><b>Berepülhető pontfelhő</b><span>Szabad bejárás, nézőpontok, végigrepülés</span></div></div>' +
     '<div class="media"><img src="assets/img/svc-berepulo.jpg" alt="">' + TAG + '<div class="cap"><b>Virtuális berepülő videó</b><span>Előre megtervezett kameraút a 3D modellből</span></div></div>' +
     "</div></div>" + foot());

@@ -200,7 +200,7 @@ def load_cloud(path):
     return d["pts"], d["cols"]
 
 
-def cloud_to_mesh(name, pts, cols, voxel=0.06, radius=0.07):
+def cloud_to_mesh(name, pts, cols, voxel=0.06, radius=0.07, material=None):
     """Reconstruct a surface mesh from a point cloud (points -> SDF volume -> mesh), colour from nearest point."""
     from scan import cloud_object
     ob = cloud_object(name + "_src", pts, cols, radius=0.01)
@@ -249,7 +249,13 @@ def cloud_to_mesh(name, pts, cols, voxel=0.06, radius=0.07):
     ng.links.new(sn.outputs["Index"], si.inputs["Index"])
     ng.links.new(vm.outputs["Mesh"], sa.inputs["Geometry"])
     ng.links.new(si.outputs["Value"], sa.inputs["Value"])
-    ng.links.new(sa.outputs["Geometry"], go.inputs[0])
+    if material is not None:
+        smn = ng.nodes.new("GeometryNodeSetMaterial")
+        smn.inputs["Material"].default_value = material
+        ng.links.new(sa.outputs["Geometry"], smn.inputs["Geometry"])
+        ng.links.new(smn.outputs["Geometry"], go.inputs[0])
+    else:
+        ng.links.new(sa.outputs["Geometry"], go.inputs[0])
     mod = ob.modifiers.new("rec", "NODES")
     mod.node_group = ng
     return ob

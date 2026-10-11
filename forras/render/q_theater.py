@@ -140,8 +140,8 @@ elif stage in ("mesh", "meshover"):
     sel = rng.random(len(pts)) < 0.5
     if stage == "meshover":
         sel &= pts[:, 2] < 13.8
-    ob = modes.cloud_to_mesh("mesh", pts[sel], cols[sel], voxel=0.07, radius=0.08)
-    ob.data.materials.append(modes.vertex_color_material("__vcol_wire__", wire=True, emission=1.7))
+    vm = modes.vertex_color_material("__vcol_wire__", wire=True, emission=1.2)
+    ob = modes.cloud_to_mesh("mesh", pts[sel], cols[sel], voxel=0.07, radius=0.08, material=vm)
     world_color((0.55, 0.58, 0.62), 1.0)
     for (x, y, z, sz, e) in [(0, -12, 13.5, 14, 4000), (0, 4, 12, 10, 2500), (0, -12, 3.6, 12, 900)]:
         light(f"mesh_in_{x}_{y}", "AREA", (x, y, z), e, (1, 1, 1), size=sz, target=(x, y, -5))

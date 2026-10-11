@@ -53,3 +53,24 @@ A mesteranyag 8.5 pontja szerint külső példákat csak ötletként használunk
 - Matterport-túrák szállodákról és múzeumokról (pl. a Matterport saját „Discover” galériája),
 - múzeumi virtuális túrák (Google Arts & Culture),
 - színházi digitális ikrek és BIM-folyamatvideók a szoftvergyártóktól (Autodesk, Graphisoft, Leica, NavVis, Faro).
+
+## 6. Szolgáltatásonkénti képanyag-terv
+
+Jelölés: Sz = színház, R = rendezvényhelyszín, H = szálloda (hotel), M = múzeum; ● = fő illeszkedés (zöld), ○ = kiegészítő (sárga).
+
+| Szolgáltatás | Célcsoport | Most a portfólióban (koncepció) | Érdemes pótolni saját anyaggal | Belső kérdés |
+|---|---|---|---|---|
+| 360°-os panorámakép | Sz● R● H● M● | 4 helyszín 360°-os panorámái, körbenézhetően | Saját 360°-os felvétel egy valós színpadról vagy szállodai szobáról | Melyik kamerával, milyen felbontásban? Fényképezés vagy szkennerpanoráma? |
+| Virtuális túra panorámapontokkal | Sz● R○ H● M● | Működő túra 3×3 ponttal (színház, rendezvénytér, szálloda, múzeum) | Egy valós helyszín 5–10 pontos túrája, weboldalba ágyazva | Milyen platformon adjuk át (saját, Matterport, Kuula stb.)? Ki tárolja, és mennyiért? |
+| Berepülhető 3D túra | R● M● | Böngészőben bejárható pontfelhő (múzeum, rendezvénytér a tervvel) | Saját szkenből készült bejárható modell | Milyen nézőt használunk (Potree, Matterport, saját)? Mekkora fájlt kezel az ügyfél gépe? |
+| 360°-os videó | Sz○ R○ H● M● | Panorámakép lejátszófelülettel (illusztráció) | Rövid saját 360°-os videó | Van-e 360°-os videókamera? Utómunka és stabilizálás? |
+| Virtuális berepülő videó | Sz○ R● H○ M○ | Renderelt berepülés a kastélyparkról, tervezett elrendezéssel | Saját modellből renderelt 20–40 mp-es videó | Melyik szoftverrel rendereljük, és mennyi idő egy videó? |
+| VR / MR / AR bemutató | Sz○ R○ H○ M○ | Sztereó VR-nézet a színházból (illusztráció) | Rövid VR-demó headsettel (pl. Quest) | Van-e eszköz, és ki fejleszti? Ez gyakran partnert igényel. |
+| Drónfotó | H○ M○ | Szállodai medencekert alkonyatkor | Saját drónfotó egy referenciahelyszínről | Drónengedély, kategória, biztosítás, repülési tilalmak |
+| Drónvideó | R○ H● M○ | Drónnézet lejátszófelülettel, kastélypark | Saját drónvideó | Ugyanaz, mint a drónfotónál, valamint a vágás és a zene jogai |
+| Környezeti és megközelítési túra | Sz● R○ H● M● | Felülnézeti térkép útvonallal és panorámapontokkal | Megközelítési útvonal valós panorámapontokkal | A „Google Earth” és a „Street View” név használata; feltöltsük-e a Google-re? |
+| Pontfelhő | Sz○ R○ H○ M● | Színház (6,7 M pont) és múzeum (4,3 M pont) szimulált szkenje | Saját TLS-szkenből készült képek és bejárás | Szkennertípus, pontosság, regisztrációs hiba, formátum (E57/LAS/RCP) |
+| Mesh (felületmodell) | Sz○ R○ H○ M○ | A pontfelhőből rekonstruált háló, dróthálós nézettel | Saját mesh textúrával | Melyik szoftverrel készül, és mekkora a fájlméret és a részletesség? |
+| 3D modell | Sz● R● H○ M○ | Metszeti modellek (színház, szálloda, múzeum, rendezvény-elrendezés) | Saját egyszerűsített modell egy valós helyszínről | Milyen részletességet vállalunk, és milyen formátumban adjuk át? |
+| BIM-modell (Revit / Archicad) | Sz○ R○ H● M● | Kategóriánként színezett BIM-nézetek | Képernyőkép valós Revit/Archicad modellből (elemlista, tulajdonságpanel) | LOD-szint, átadási formátum (RVT/PLN/IFC), modellezési idő |
+| Hőtérképezés | M○ | Szimulált hőkép (homlokzat, kiállítótér) | Valós hőkamerás felvétel | Van-e hőkamera és minősített kiértékelő? Diagnózist nem ígérünk. |
