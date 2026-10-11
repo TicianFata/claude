@@ -13,7 +13,7 @@ CAMS = {
     "stage": ((0, 6.5, 2.7), (0, -14, 6.5), 16),
     "stalls": ((-1.5, -15.5, 2.6), (0, 6, 4.2), 24),
     "cut": ((-34, -52, 52), (0, -9, 0), 32),
-    "cloud_over": ((-40, -58, 34), (0, -8, 3), 30),
+    "cloud_over": ((-21, -45, 38), (0, -9, -1), 27),
 }
 BIM_RULES = [
     (r"^tier_|^gal_step", "Födém / erkély", (0.86, 0.78, 0.6)),
@@ -41,7 +41,7 @@ def cam(name):
 def cutaway(C):
     for o in list(C["ceiling"].objects):
         o.hide_render = True
-    for n in ("stage_roof", "outer_wall", "stage_wall_L", "stage_back"):
+    for n in ("stage_roof", "outer_wall", "stage_wall_L", "stage_wall_R", "stage_back"):
         o = bpy.data.objects.get(n)
         if o:
             o.hide_render = True
@@ -89,10 +89,19 @@ elif stage == "bim":
     used = modes.apply_bim(BIM_RULES)
     modes.bim_lighting()
     modes.set_view("AgX", "None", 0.0)
+    inner = []
+    for (x, y, z, sz, e) in [(0, -12, 13.8, 14, 5000), (0, 4, 12, 10, 3000), (-10, -12, 10.5, 6, 900), (10, -12, 10.5, 6, 900),
+                             (0, -22, 10.5, 8, 900), (0, -12, 3.6, 12, 1200), (-11.5, -10, 7.0, 3, 500), (11.5, -10, 7.0, 3, 500),
+                             (-11.5, -10, 3.6, 3, 500), (11.5, -10, 3.6, 3, 500), (0, -26, 7.0, 4, 500), (0, -26, 3.6, 4, 500)]:
+        inner.append(light(f"bim_in_{x}_{y}_{z}", "AREA", (x, y, z), e, (1, 1, 1), size=sz, target=(x, y, -5)))
     cam("hero")
     render(os.path.join(OUT, "bim_hero.png"), RES, 48)
+    for l in inner:
+        l.hide_render = True
     cutaway(C)
-    cam("cut")
+    sc.view_settings.exposure = -0.6
+    c = camera("cam_cutb", CAMS["cut"][0], CAMS["cut"][1], 37)
+    sc.camera = c
     render(os.path.join(OUT, "bim_cut.png"), RES, 48)
     import json
     json.dump({k: v for k, v in used.items()}, open(os.path.join(OUT, "bim_legend.json"), "w"), ensure_ascii=False)

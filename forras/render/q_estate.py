@@ -118,8 +118,10 @@ elif stage == "thermal":
     render(os.path.join(OUT, "thermal_facade.png"), RES, 32)
 elif stage == "pano":
     sc, M, C = estate.build(event=True, pool=True, dusk=True)
-    for name, loc, yaw in (("asztalok", (-2.5, -62.0, 1.7), 90), ("szinpad", (-32.0, -62.0, 1.7), -90),
+    for name, loc, yaw in (("asztalok", (1.5, -58.5, 1.7), 90), ("szinpad", (-32.0, -62.0, 1.7), -90),
                            ("bejarat", (0.0, -24.0, 1.7), 180)):
+        if os.path.exists(os.path.join(OUT, f"pano_{name}.png")) and name != "asztalok":
+            continue
         pc = pano_camera("p_" + name, loc)
         pc.rotation_euler[2] = math.radians(yaw)
         sc.camera = pc

@@ -208,7 +208,9 @@ def build(with_ceiling=True, house_level=0.35):
         y = -5.4 - (YC - R - DEPTH + 5.4) * -v
         y = -5.4 + (YC - R - DEPTH - 5.4) * v
         return (x, y, rake(y))
-    grid_surface("stalls_floor", 8, 30, floor_fn, M["carpet"], C["architecture"], smooth=False)
+    fp = horseshoe(R, YS, YC, n_arc=64, n_straight=8, offset=DEPTH)
+    ribbon("stalls_floor", [(x, y, rake(y)) for x, y in fp], [(0.0, y, rake(y)) for x, y in fp], M["carpet"],
+           C["architecture"])
     box("pit_side_floor", (0, -1.6, -0.02), (2 * (R + DEPTH), 2.4, 0.04), M["carpet"], C["architecture"])
     box("front_floor", (0, -4.3, 0.0), (2 * (R + DEPTH), 2.4, 0.04), M["carpet"], C["architecture"])
 

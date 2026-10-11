@@ -122,8 +122,8 @@
       }).join("") + "</tr>";
     });
   });
-  add("", '<div class="pad" style="top:80px"><div class="eyebrow">Illeszkedési mátrix</div><h2 style="margin-top:18px;font-size:60px">Egy pillantással: <em>mit kinek ajánlunk</em></h2>' +
-    '<table class="mx" style="font-size:19px"><thead><tr><th>Szolgáltatás</th>' + D.segments.map(function (s) { return '<th class="' + (SEG === s.id ? "hl" : "") + '">' + esc(s.name) + "</th>"; }).join("") + "</tr></thead><tbody>" + rows + "</tbody></table>" +
+  add("", '<div class="pad" style="top:70px"><div class="eyebrow">Illeszkedési mátrix</div><h2 style="margin-top:14px;font-size:54px">Egy pillantással: <em>mit kinek ajánlunk</em></h2>' +
+    '<table class="mx" style="font-size:18px;margin-top:26px"><thead><tr><th>Szolgáltatás</th>' + D.segments.map(function (s) { return '<th class="' + (SEG === s.id ? "hl" : "") + '">' + esc(s.name) + "</th>"; }).join("") + "</tr></thead><tbody>" + rows + "</tbody></table>" +
     '<div class="legend"><span><span class="mk fo"></span>&nbsp; Legjobban illik</span><span><span class="mk extra"></span>&nbsp; Kiegészítő érték</span><span>– Nem javasolt fókusz</span></div></div>' + foot());
 
   /* next step */

@@ -202,7 +202,7 @@ def build(event=True, pool=True, dusk=True):
     rnd = random.Random(5)
     for k in range(14):
         y = -45 - k * 12
-        if event and y > -112:
+        if y > -112:
             continue
         for sx in (-1, 1):
             tree(f"ave_{k}_{sx}", sx * 9.0, y, rnd.uniform(11, 14), rnd, M, C["park"])

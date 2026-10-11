@@ -77,4 +77,4 @@ if "rendezveny" in which and os.path.exists(os.path.join(W, "scan_estate", "clou
             {"pos": [20, -95, 12], "target": [-10, -60, 1]}, {"pos": [-14, -62, 6], "target": [-44, -62, 4]},
             {"pos": [-20, -40, 10], "target": [0, -7, 5]}, {"pos": [40, -30, 30], "target": [-8, -58, 0]},
             {"pos": [95, -150, 70], "target": [-5, -50, 0]}],
-           {"size": 0.3, "fog": 0.002, "gain": 1.3, "pathSeconds": 30, "zrange": [0, 20]})
+           {"size": 0.2, "fog": 0.002, "gain": 1.3, "pathSeconds": 30, "zrange": [0, 20]})

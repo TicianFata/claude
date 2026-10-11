@@ -209,7 +209,7 @@ NODES = {
         ("bejarat", "Bejárat", (2.4, -3.6, 1.55), 0, 0.0), ("agy", "Ágy", (0.2, -0.9, 1.55), 0, 0.0),
         ("ablak", "Ablak", (2.0, 3.9, 1.55), 180, 0.0)]),
     "rendezveny": ("Rendezvényhelyszín", "assets/img/rendezveny-hero.jpg", [
-        ("asztalok", "Vendégtér", (-2.5, -62.0, 1.7), 90, 0.0), ("szinpad", "Színpad előtt", (-32.0, -62.0, 1.7), -90, 0.0),
+        ("asztalok", "Vendégtér", (1.5, -58.5, 1.7), 90, 0.0), ("szinpad", "Színpad előtt", (-32.0, -62.0, 1.7), -90, 0.0),
         ("bejarat", "Kastély előtt", (0.0, -24.0, 1.7), 180, 0.0)]),
     "muzeum": ("Múzeum", "assets/img/muzeum-terem.jpg", [
         ("bejarat", "Bejárat", (0, -10.5, 1.6), 0, 0.0), ("kozep", "Terem közepe", (1.2, 0.5, 1.6), 0, 0.0),
@@ -229,6 +229,9 @@ def yaw_pitch(node, tgt):
 
 tours = {}
 for seg, (label, poster, nodes) in NODES.items():
+    nodes = [n for n in nodes if os.path.exists(os.path.join(PANO, seg + "-" + n[0] + ".jpg"))]
+    if len(nodes) < 2:
+        continue
     scenes = []
     for n in nodes:
         hs = []
@@ -258,6 +261,8 @@ for seg, nm, img, lab in (("szinhaz", "paholy", "svc-tura.jpg", "VIRTUÁLIS TÚR
                           ("rendezveny", "bejarat", "rendezveny-tura.jpg", "VIRTUÁLIS TÚRA · RENDEZVÉNYTÉR")):
     key = seg + "-" + nm
     if key not in eqs:
+        continue
+    if seg not in tours or not [x for x in tours[seg]["scenes"] if x["id"] == nm]:
         continue
     sc_ = [x for x in tours[seg]["scenes"] if x["id"] == nm][0]
     spots = []

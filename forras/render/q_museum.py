@@ -86,7 +86,7 @@ elif stage == "cloud":
     cam("hero")
     render(os.path.join(OUT, "cloud_hero.png"), RES, 24)
     bpy.data.objects.remove(ob)
-    keep = (pts[:, 2] < 7.0) & (pts[:, 0] > -5.9) & (pts[:, 1] > -15.9)
+    keep = (pts[:, 2] < 7.0) & (pts[:, 0] > -5.5) & (pts[:, 1] > -15.9)
     ob = scan.cloud_object("cloud_o", pts[keep], cols[keep], radius=0.016, emission=1.3)
     cam("over")
     render(os.path.join(OUT, "cloud_over.png"), RES, 24)

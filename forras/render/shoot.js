@@ -50,6 +50,26 @@ function serve(port) {
       await p.screenshot({ path: path.join(OUT, "page_" + tag + ".png"), fullPage: true });
       const ow = await p.evaluate(() => document.documentElement.scrollWidth > window.innerWidth + 1);
       console.log("errors:", JSON.stringify(errs), "horizontal-overflow:", ow);
+    } else if (mode === "sections") {
+      const q = process.argv[3] || "";
+      const w = parseInt(process.argv[4] || "1440", 10);
+      const ctx = await browser.newContext({ viewport: { width: w, height: w < 600 ? 844 : 900 } });
+      const p = await ctx.newPage();
+      const errs = [];
+      p.on("pageerror", (e) => errs.push(String(e)));
+      await p.goto(base + "index.html" + q, { waitUntil: "networkidle" });
+      await p.evaluate(async () => {
+        document.querySelectorAll(".rv").forEach((e) => e.classList.add("in"));
+        document.querySelectorAll("img[loading=lazy]").forEach((i) => i.removeAttribute("loading"));
+        document.getElementById("nav").style.display = "none";
+      });
+      await p.waitForTimeout(3000);
+      const sels = await p.evaluate(() => [...document.querySelectorAll("body > header, body > section, #chapters > section, body > footer")].map((e, i) => { e.setAttribute("data-shot", i); return i; }));
+      const tag = (q.replace(/[^a-z0-9]/gi, "_") || "full") + "_" + w;
+      for (const i of sels) {
+        await p.locator("[data-shot='" + i + "']").screenshot({ path: path.join(OUT, "sec_" + tag + "_" + String(i).padStart(2, "0") + ".png") });
+      }
+      console.log("sections", sels.length, "errors:", JSON.stringify(errs));
     } else if (mode === "viewers") {
       const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 } });
       const p = await ctx.newPage();
