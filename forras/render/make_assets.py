@@ -212,14 +212,17 @@ NODES = {
         ("asztalok", "Vendégtér", (1.5, -58.5, 1.7), 90, 0.0), ("szinpad", "Színpad előtt", (-32.0, -62.0, 1.7), -90, 0.0),
         ("bejarat", "Kastély előtt", (0.0, -24.0, 1.7), 180, 0.0)]),
     "muzeum": ("Múzeum", "assets/img/muzeum-terem.jpg", [
-        ("bejarat", "Bejárat", (0, -10.5, 1.6), 0, 0.0), ("kozep", "Terem közepe", (1.2, 0.5, 1.6), 0, 0.0),
+        ("bejarat", "Bejárat", (1.7, -11.2, 1.6), 0, 0.0), ("kozep", "Terem közepe", (1.2, 0.5, 1.6), 0, 0.0),
         ("kiallitas", "Időszakos kiállítás", (-1.5, 7.2, 1.6), 0, 0.0)]),
 }
 
 
 def yaw_pitch(node, tgt):
-    (_, _, p, rot, _), (_, _, q, _, fz) = node, tgt
-    d = (q[0] - p[0], q[1] - p[1], fz + 0.05 - p[2])
+    """Hotspot on the floor a few metres ahead in the direction of the target node (Street View style)."""
+    (_, _, p, rot, fz), (_, _, q, _, _) = node, tgt
+    L = math.hypot(q[0] - p[0], q[1] - p[1])
+    s_ = min(3.2, 0.55 * L)
+    d = ((q[0] - p[0]) / L * s_, (q[1] - p[1]) / L * s_, fz + 0.05 - p[2])
     th = math.radians(rot)
     fwd, right = (-math.sin(th), math.cos(th)), (math.cos(th), math.sin(th))
     yaw = math.degrees(math.atan2(d[0] * right[0] + d[1] * right[1], d[0] * fwd[0] + d[1] * fwd[1]))

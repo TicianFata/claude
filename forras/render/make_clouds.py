@@ -33,14 +33,14 @@ if "muzeum" in which and os.path.exists(os.path.join(W, "scan_museum", "cloud.np
     d = np.load(os.path.join(W, "scan_museum", "cloud.npz"))
     p, c = d["pts"], d["cols"]
     k = (p[:, 2] < 7.2) & (np.abs(p[:, 1]) < 16.4)
-    export("muzeum", p[k], c[k], 650000,
+    export("muzeum", p[k], c[k], 820000,
            [V("Bejárat", (0, -15, 1.7), (0, 0, 1.6)), V("Kiállítási fal", (1.5, 4.5, 1.7), (0, 10.4, 2.2)),
             V("Felülnézet", (-14, -22, 17), (0, -1, 0.5))],
            [{"pos": [-12, -24, 15], "target": [0, -2, 0.5]}, {"pos": [0, -15.5, 1.8], "target": [0, 0, 1.6]},
             {"pos": [-1.5, -8, 1.7], "target": [0, -3, 1.4]}, {"pos": [2.0, -1.0, 1.8], "target": [-3, 2, 1.5]},
             {"pos": [0.5, 5.0, 1.8], "target": [0, 10.4, 2.2]}, {"pos": [-3.5, 9.5, 3.2], "target": [3, 0, 1.2]},
             {"pos": [-13, -18, 13], "target": [0, 0, 0.5]}],
-           {"size": 0.05, "fog": 0.012, "gain": 1.5, "pathSeconds": 26, "zrange": [0, 7]})
+           {"size": 0.06, "fog": 0.012, "gain": 1.2, "pathSeconds": 26, "zrange": [0, 7]})
 if "szinhaz" in which and os.path.exists(os.path.join(W, "scan_theater", "cloud.npz")):
     d = np.load(os.path.join(W, "scan_theater", "cloud.npz"))
     p, c = d["pts"], d["cols"]

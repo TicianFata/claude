@@ -91,7 +91,7 @@
       var im = el("img", { src: v.img, alt: v.name, loading: i ? "lazy" : "eager" });
       if (!i) im.className = "on";
       stage.appendChild(im);
-      var b = el("button", { type: "button" }, '<span class="k">0' + (i + 1) + "</span><b>" + esc(v.name) + "</b><span>" + esc(v.txt) + "</span>");
+      var b = el("button", { type: "button" }, '<span class="k">0' + (i + 1) + "</span><b>" + esc(v.name) + '</b><span class="d">' + esc(v.txt) + "</span>");
       if (!i) b.className = "on";
       b.addEventListener("click", function () { auto = false; show(i); });
       tabs.appendChild(b);

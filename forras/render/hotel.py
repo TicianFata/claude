@@ -88,9 +88,9 @@ def build():
     # shell
     box("floor", (0, 0, -0.1), (X1 - X0, Y1 - Y0, 0.2), M["floor"], C["architecture"])
     box("ceiling", (0, 0, H + 0.1), (X1 - X0, Y1 - Y0, 0.2), M["ceiling"], C["architecture"])
-    box("wall_L", (X0 - 0.1, 0, H / 2), (0.2, Y1 - Y0, H), M["wall"], C["architecture"])
-    box("wall_R", (X1 + 0.1, 0, H / 2), (0.2, Y1 - Y0, H), M["wall"], C["architecture"])
-    box("wall_back", (0, Y0 - 0.1, H / 2), (X1 - X0, 0.2, H), M["wall"], C["architecture"])
+    box("wall_L", (X0 - 0.1, 0, H / 2), (0.2, Y1 - Y0 + 0.4, H + 0.4), M["wall"], C["architecture"])
+    box("wall_R", (X1 + 0.1, 0, H / 2), (0.2, Y1 - Y0 + 0.4, H + 0.4), M["wall"], C["architecture"])
+    box("wall_back", (0, Y0 - 0.1, H / 2), (X1 - X0 + 0.4, 0.2, H + 0.4), M["wall"], C["architecture"])
     # entrance door on back wall
     box("door", (2.6, Y0 + 0.02, 1.1), (1.0, 0.06, 2.2), M["darkwood"], C["architecture"], bevel=0.01)
     cylinder("door_handle", (2.2, Y0 + 0.08, 1.05), 0.012, 0.16, M["brass"], C["architecture"], axis="X")

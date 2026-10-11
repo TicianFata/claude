@@ -88,7 +88,7 @@ elif stage == "bim":
     sc, M, C = theater.build()
     used = modes.apply_bim(BIM_RULES)
     modes.bim_lighting()
-    modes.set_view("AgX", "None", 0.0)
+    modes.set_view("AgX", "None", -0.7)
     inner = []
     for (x, y, z, sz, e) in [(0, -12, 13.8, 14, 5000), (0, 4, 12, 10, 3000), (-10, -12, 10.5, 6, 900), (10, -12, 10.5, 6, 900),
                              (0, -22, 10.5, 8, 900), (0, -12, 3.6, 12, 1200), (-11.5, -10, 7.0, 3, 500), (11.5, -10, 7.0, 3, 500),
@@ -99,7 +99,7 @@ elif stage == "bim":
     for l in inner:
         l.hide_render = True
     cutaway(C)
-    sc.view_settings.exposure = -0.6
+    sc.view_settings.exposure = -0.9
     c = camera("cam_cutb", CAMS["cut"][0], CAMS["cut"][1], 37)
     sc.camera = c
     render(os.path.join(OUT, "bim_cut.png"), RES, 48)
@@ -141,8 +141,10 @@ elif stage in ("mesh", "meshover"):
     if stage == "meshover":
         sel &= pts[:, 2] < 13.8
     ob = modes.cloud_to_mesh("mesh", pts[sel], cols[sel], voxel=0.07, radius=0.08)
-    ob.data.materials.append(modes.vertex_color_material("__vcol_wire__", wire=True, emission=0.6))
-    world_color((0.55, 0.58, 0.62), 0.8)
+    ob.data.materials.append(modes.vertex_color_material("__vcol_wire__", wire=True, emission=1.7))
+    world_color((0.55, 0.58, 0.62), 1.0)
+    for (x, y, z, sz, e) in [(0, -12, 13.5, 14, 4000), (0, 4, 12, 10, 2500), (0, -12, 3.6, 12, 900)]:
+        light(f"mesh_in_{x}_{y}", "AREA", (x, y, z), e, (1, 1, 1), size=sz, target=(x, y, -5))
     light("mesh_sun", "SUN", (-20, -40, 40), 1.2, (1, 0.97, 0.92), size=3, target=(0, 0, 0))
     modes.set_view("AgX", "None", 0.0)
     if stage == "mesh":

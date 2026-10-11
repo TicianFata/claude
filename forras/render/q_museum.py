@@ -27,16 +27,20 @@ BIM_RULES = [
     (r"wall|^end_|^next_", "Fal / szerkezet", (0.8, 0.83, 0.88)),
 ]
 THERMAL = [
-    (r"^spotbody|^track", 0.97, 0.0),
-    (r"laylight|^mullion", 0.08, 0.0),
-    (r"^cove|ceilflat|ceil_end", 0.2, 0.01),
-    (r"^art_", 0.5, 0.0),
-    (r"^bench", 0.55, 0.0),
-    (r"^vit_|^pl_|^sc_|AntiqueCamera|ABeautifulGame|Mosquito", 0.42, 0.0),
-    (r"floor", 0.4, 0.0),
-    (r"^next_", 0.52, 0.0),
-    (r"^end_", 0.3, 0.02),
-    (r"wall", 0.3, 0.025),
+    (r"^spotbody", 1.0, 0.0),
+    (r"^track", 0.86, 0.0),
+    (r"laylight|^mullion", 0.04, 0.0),
+    (r"^cove|ceilflat|ceil_end", 0.3, 0.025),
+    (r"^art_", 0.64, 0.0),
+    (r"^fs_|^title|^subtitle", 0.58, 0.0),
+    (r"^bench", 0.6, 0.0),
+    (r"^vit_|^pl_|^sc_|AntiqueCamera|ABeautifulGame|Mosquito", 0.4, 0.0),
+    (r"floor", 0.16, 0.0),
+    (r"^next_", 0.5, 0.0),
+    (r"^skirt", 0.2, 0.0),
+    (r"^cornice", 0.5, 0.0),
+    (r"^end_|^door_", 0.24, 0.04),
+    (r"wall", 0.22, 0.045),
 ]
 
 
@@ -66,7 +70,9 @@ if stage == "photo":
         print("done", s, time.time() - t0, flush=True)
 elif stage == "panos":
     sc, M, C = museum.build()
-    for name, loc in (("bejarat", (0, -10.5, 1.6)), ("kozep", (1.2, 0.5, 1.6)), ("kiallitas", (-1.5, 7.2, 1.6))):
+    for name, loc in (("bejarat", (1.7, -11.2, 1.6)), ("kozep", (1.2, 0.5, 1.6)), ("kiallitas", (-1.5, 7.2, 1.6))):
+        if name != "bejarat" and os.path.exists(os.path.join(OUT, f"pano_{name}.png")):
+            continue
         sc.camera = pano_camera("p_" + name, loc)
         render(os.path.join(OUT, f"pano_{name}.png"), (3072, 1536), 28)
         print("done pano", name, time.time() - t0, flush=True)
@@ -94,7 +100,7 @@ elif stage == "bim":
     sc, M, C = museum.build()
     modes.apply_bim(BIM_RULES)
     modes.bim_lighting()
-    modes.set_view("AgX", "None", 0.0)
+    modes.set_view("AgX", "None", -0.9)
     modes.freestyle(True, 0.9)
     no_ceiling()
     cam("over")

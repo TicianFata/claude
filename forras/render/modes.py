@@ -137,8 +137,8 @@ def thermal_material(base_key="temp"):
     nzs = nt.nodes.new("ShaderNodeMath")
     nzs.operation = "MULTIPLY_ADD"
     nt.links.new(nz.outputs["Fac"], nzs.inputs[0])
-    nzs.inputs[1].default_value = 0.08
-    nzs.inputs[2].default_value = -0.04
+    nzs.inputs[1].default_value = 0.14
+    nzs.inputs[2].default_value = -0.07
     add1 = nt.nodes.new("ShaderNodeMath")
     add1.operation = "ADD"
     nt.links.new(at.outputs["Fac"], add1.inputs[0])

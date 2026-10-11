@@ -172,8 +172,8 @@ h1 em, h2 em { font-style: italic; color: var(--brass-2); }
 @media (max-width: 560px) { .process { grid-template-columns: 1fr; } }
 
 /* ---------- same space */
-.same { display: grid; grid-template-columns: 1fr 340px; gap: 28px; align-items: stretch; }
-.same .stage { position: relative; aspect-ratio: 16 / 9; border-radius: var(--r); overflow: hidden; background: #000; }
+.same { display: grid; grid-template-columns: 1fr 320px; gap: 28px; align-items: start; }
+.same .stage { position: relative; aspect-ratio: 16 / 9; width: 100%; align-self: start; border-radius: var(--r); overflow: hidden; background: #000; }
 .same .stage img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0; transition: opacity 0.6s; }
 .same .stage img.on { opacity: 1; }
 .same .tabs { display: flex; flex-direction: column; gap: 8px; }
@@ -182,7 +182,8 @@ h1 em, h2 em { font-style: italic; color: var(--brass-2); }
   padding: 14px 16px; transition: all 0.25s;
 }
 .same .tabs button b { display: block; font-family: var(--serif); font-weight: 500; font-size: 20px; }
-.same .tabs button span { display: block; font-size: 13.5px; color: var(--m-light); margin-top: 4px; line-height: 1.45; }
+.same .tabs button span.d { display: none; font-size: 13.5px; color: var(--m-light); margin-top: 6px; line-height: 1.45; }
+.same .tabs button.on span.d { display: block; }
 .same .tabs button.on { border-color: var(--brass); background: rgba(201, 162, 90, 0.08); }
 .same .tabs button .k { font-family: var(--mono); font-size: 11px; color: var(--brass); }
 @media (max-width: 980px) { .same { grid-template-columns: 1fr; } .same .tabs { flex-direction: row; overflow-x: auto; } .same .tabs button { min-width: 220px; } }

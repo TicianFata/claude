@@ -77,7 +77,7 @@ elif stage == "bim":
     world_color((0.92, 0.94, 0.97), 1.0)
     light("bim_in1", "AREA", (0, -2, 2.95), 900, (1, 1, 1), size=5, target=(0, -2, 0))
     light("bim_in2", "AREA", (1, 3, 2.95), 700, (1, 1, 1), size=4, target=(1, 3, 0))
-    modes.set_view("AgX", "None", 0.0)
+    modes.set_view("AgX", "None", -0.45)
     modes.freestyle(True, 0.9)
     cam("hero")
     render(os.path.join(OUT, "bim_hero.png"), RES, 48)
@@ -86,7 +86,7 @@ elif stage == "bim":
             o.hide_render = True
     cutaway()
     modes.bim_lighting(sun_dir=(0.4, -0.6, 0.8))
-    modes.set_view("AgX", "None", 0.0)
+    modes.set_view("AgX", "None", -0.85)
     modes.freestyle(True, 0.9)
     cam("cut")
     render(os.path.join(OUT, "bim_cut.png"), RES, 48)
