@@ -1,0 +1,146 @@
+[
+ {
+  "excel_sor": 2,
+  "excel_nev": "3D modell",
+  "szinhaz": "fo",
+  "rendezveny": "fo",
+  "szalloda": "extra",
+  "muzeum": "extra"
+ },
+ {
+  "excel_sor": 3,
+  "excel_nev": "360 panoráma képek",
+  "szinhaz": "fo",
+  "rendezveny": "fo",
+  "szalloda": "fo",
+  "muzeum": "fo"
+ },
+ {
+  "excel_sor": 4,
+  "excel_nev": "360 panoráma videó",
+  "szinhaz": "extra",
+  "rendezveny": "extra",
+  "szalloda": "fo",
+  "muzeum": "fo"
+ },
+ {
+  "excel_sor": 5,
+  "excel_nev": "Benapozás vizsgálat",
+  "szinhaz": "nem",
+  "rendezveny": "nem",
+  "szalloda": "nem",
+  "muzeum": "nem"
+ },
+ {
+  "excel_sor": 6,
+  "excel_nev": "Berepülhető virtuális túra (Mesh / Pontfelhő)milyen pontosan?",
+  "szinhaz": "nem",
+  "rendezveny": "fo",
+  "szalloda": "nem",
+  "muzeum": "fo"
+ },
+ {
+  "excel_sor": 7,
+  "excel_nev": "BIM modell (Revit, Archicad)",
+  "szinhaz": "extra",
+  "rendezveny": "extra",
+  "szalloda": "fo",
+  "muzeum": "fo"
+ },
+ {
+  "excel_sor": 8,
+  "excel_nev": "Drón felvétel kép",
+  "szinhaz": "nem",
+  "rendezveny": "nem",
+  "szalloda": "extra",
+  "muzeum": "extra"
+ },
+ {
+  "excel_sor": 9,
+  "excel_nev": "Drón felvétel videó",
+  "szinhaz": "nem",
+  "rendezveny": "extra",
+  "szalloda": "fo",
+  "muzeum": "extra"
+ },
+ {
+  "excel_sor": 10,
+  "excel_nev": "Google Earth street-view túra",
+  "szinhaz": "fo",
+  "rendezveny": "extra",
+  "szalloda": "fo",
+  "muzeum": "fo"
+ },
+ {
+  "excel_sor": 11,
+  "excel_nev": "Hőtérképezés",
+  "szinhaz": "nem",
+  "rendezveny": "nem",
+  "szalloda": "nem",
+  "muzeum": "extra"
+ },
+ {
+  "excel_sor": 12,
+  "excel_nev": "Kivitelezés nyomon követés",
+  "szinhaz": "nem",
+  "rendezveny": "nem",
+  "szalloda": "nem",
+  "muzeum": "nem"
+ },
+ {
+  "excel_sor": 13,
+  "excel_nev": "Megvalósulási hiba / deformáció elemzés",
+  "szinhaz": "nem",
+  "rendezveny": "nem",
+  "szalloda": "nem",
+  "muzeum": "nem"
+ },
+ {
+  "excel_sor": 14,
+  "excel_nev": "Mixed berepülő videó (modell + valós)",
+  "szinhaz": "nem",
+  "rendezveny": "nem",
+  "szalloda": "nem",
+  "muzeum": "nem"
+ },
+ {
+  "excel_sor": 15,
+  "excel_nev": "Pontfelhő",
+  "szinhaz": "extra",
+  "rendezveny": "extra",
+  "szalloda": "extra",
+  "muzeum": "fo"
+ },
+ {
+  "excel_sor": 16,
+  "excel_nev": "Mesh pontfelhőből",
+  "szinhaz": "extra",
+  "rendezveny": "extra",
+  "szalloda": "extra",
+  "muzeum": "extra"
+ },
+ {
+  "excel_sor": 17,
+  "excel_nev": "Street view szerű virtuális túra.",
+  "szinhaz": "fo",
+  "rendezveny": "extra",
+  "szalloda": "fo",
+  "muzeum": "fo"
+ },
+ {
+  "excel_sor": 18,
+  "excel_nev": "Virtuális berepülő videó",
+  "szinhaz": "extra",
+  "rendezveny": "fo",
+  "szalloda": "extra",
+  "muzeum": "extra"
+ },
+ {
+  "excel_sor": 19,
+  "excel_nev": "VR/MR/AR prezentáció",
+  "szinhaz": "extra",
+  "rendezveny": "extra",
+  "szalloda": "extra",
+  "muzeum": "extra"
+ }
+]
