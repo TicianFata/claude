@@ -55,18 +55,27 @@
     D.segments.forEach(function (s) { chips.appendChild(el("a", { href: "#ch-" + s.id }, s.name)); });
   }
   (function compare() {
-    var box = $("#heroCmp"), dragging = false;
+    var box = $("#heroCmp"), dragging = false, touched = false;
     var set = function (p) { box.style.setProperty("--split", Math.max(2, Math.min(98, p)) + "%"); };
     var fromEvent = function (e) {
-      var r = box.getBoundingClientRect(), x = (e.touches ? e.touches[0].clientX : e.clientX) - r.left;
-      set((x / r.width) * 100);
+      var r = box.getBoundingClientRect();
+      set(((e.clientX - r.left) / r.width) * 100);
     };
-    box.addEventListener("pointerdown", function (e) { if (e.target.closest(".handle") || e.pointerType !== "mouse") { dragging = true; fromEvent(e); } });
+    var stop = function () { dragging = false; box.classList.remove("drag"); };
+    /* csak lenyomott gombbal (vagy ujjal) húzható – a puszta egérmozgást nem követi */
+    box.addEventListener("pointerdown", function (e) {
+      if (e.pointerType === "mouse" && e.button !== 0) return;
+      dragging = touched = true;
+      box.classList.add("drag");
+      fromEvent(e);
+    });
+    box.addEventListener("dragstart", function (e) { e.preventDefault(); });
     window.addEventListener("pointermove", function (e) { if (dragging) fromEvent(e); });
-    window.addEventListener("pointerup", function () { dragging = false; });
-    box.addEventListener("mousemove", function (e) { if (!dragging && e.buttons === 0 && !matchMedia("(pointer:coarse)").matches) fromEvent(e); });
+    window.addEventListener("pointerup", stop);
+    window.addEventListener("pointercancel", stop);
     var t0 = null;
     var intro = function (t) {
+      if (touched) return;
       if (t0 == null) t0 = t;
       var k = Math.min(1, (t - t0) / 2200), e = 1 - Math.pow(1 - k, 3);
       set(98 - 43 * e);
@@ -167,7 +176,7 @@
   /* ---------- catalogue */
   (function catalogue() {
     var f = $("#filters"), cat = $("#catalog");
-    var opts = [["all", "Mind a 14 szolgáltatás"]].concat(D.segments.map(function (s) { return [s.id, s.name]; }));
+    var opts = [["all", "Mind a " + D.services.length + " szolgáltatás"]].concat(D.segments.map(function (s) { return [s.id, s.name]; }));
     var current = SEG || "all";
     opts.forEach(function (o) {
       var b = el("button", { type: "button", "data-f": o[0] }, o[1]);

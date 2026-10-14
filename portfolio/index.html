@@ -14,10 +14,10 @@
   <div class="wrap">
     <a class="brand" href="#top"><b>BRICK<i>+</i>DATA</b><span>Reality capture · Scan-to-BIM</span></a>
     <ul>
-      <li><a href="#celcsoportok">Célcsoportok</a></li>
       <li><a href="#ugyanaz">Egy tér, több kimenet</a></li>
-      <li><a href="#bemutatok">Interaktív bemutatók</a></li>
       <li><a href="#szolgaltatasok">Szolgáltatások</a></li>
+      <li><a href="#bemutatok">Interaktív bemutatók</a></li>
+      <li><a href="#celcsoportok">Célcsoportok</a></li>
       <li><a href="#matrix">Illeszkedés</a></li>
     </ul>
     <a class="cta-mini" href="#kapcsolat">Egyeztessünk</a>
@@ -96,20 +96,19 @@
   </div>
 </section>
 
-<section class="light pad" id="celcsoportok">
+<section class="light pad" id="szolgaltatasok">
   <div class="wrap">
     <div class="sec-head split rv">
       <div>
-        <span class="eyebrow">Célcsoportok</span>
-        <h2 style="margin-top:16px">Mindenkinek <em>mást jelent</em> ugyanaz a felmérés</h2>
+        <span class="eyebrow">Szolgáltatások</span>
+        <h2 style="margin-top:16px">Mi mire jó, <em>és miben más?</em></h2>
       </div>
-      <p class="lead muted">A szolgáltatásokat aszerint válogattuk, mire van valóban szüksége az adott területnek. Zöld jelöli a legjobban illő megoldásokat, borostyán a kiegészítő értéket.</p>
+      <p class="lead muted">Minden szolgáltatásnál röviden: mi ez, mire használható, és miben különbözik a hasonlóktól. A színes címkék jelzik, melyik területnek ajánljuk.</p>
     </div>
-    <div class="segs rv" id="segCards"></div>
+    <div class="filters" id="filters"></div>
+    <div id="catalog"></div>
   </div>
 </section>
-
-<div id="chapters"></div>
 
 <section class="dark pad" id="bemutatok" style="background:var(--ink)">
   <div class="wrap">
@@ -143,19 +142,20 @@
   </div>
 </section>
 
-<section class="light pad" id="szolgaltatasok">
+<section class="light pad" id="celcsoportok">
   <div class="wrap">
     <div class="sec-head split rv">
       <div>
-        <span class="eyebrow">Szolgáltatások</span>
-        <h2 style="margin-top:16px">Mi mire jó, <em>és miben más?</em></h2>
+        <span class="eyebrow">Célcsoportok</span>
+        <h2 style="margin-top:16px">Mindenkinek <em>mást jelent</em> ugyanaz a felmérés</h2>
       </div>
-      <p class="lead muted">Minden szolgáltatásnál röviden: mi ez, mire használható, és miben különbözik a hasonlóktól. A színes címkék jelzik, melyik területnek ajánljuk.</p>
+      <p class="lead muted">A szolgáltatásokat aszerint válogattuk, mire van valóban szüksége az adott területnek. Zöld jelöli a legjobban illő megoldásokat, borostyán a kiegészítő értéket.</p>
     </div>
-    <div class="filters" id="filters"></div>
-    <div id="catalog"></div>
+    <div class="segs rv" id="segCards"></div>
   </div>
 </section>
+
+<div id="chapters"></div>
 
 <section class="dark pad" id="matrix" style="background:var(--ink-2)">
   <div class="wrap">
@@ -168,7 +168,7 @@
     </div>
     <div class="matrix-wrap rv"><table class="matrix" id="matrixTable"></table></div>
     <div class="legend"><span class="mk fo"><i></i> Legjobban illik</span><span class="mk extra"><i></i> Kiegészítő érték</span><span class="mk no">– Nem javasolt fókusz</span></div>
-    <div class="int-note internal-only"><b>Belső megjegyzés</b>A mátrix a „grading_javitott_elso4_leirasokkal.xlsx” cellaszíneiből készült (zöld/sárga/piros), a cellák szövegéből nem. Négy szolgáltatás mind a négy célcsoportnál piros volt (benapozásvizsgálat, kivitelezés nyomon követése, megvalósulási hiba/deformáció elemzés, vegyes modell+valós berepülő videó), ezek nem szerepelnek az ügyfélanyagban.</div>
+    <div class="int-note internal-only"><b>Belső megjegyzés</b>A mátrix a „grading_javitott_elso4_leirasokkal.xlsx” cellaszíneiből készült (zöld/sárga/piros), a cellák szövegéből nem. Négy szolgáltatás mind a négy célcsoportnál piros volt (benapozásvizsgálat, kivitelezés nyomon követése, megvalósulási hiba/deformáció elemzés, vegyes modell+valós berepülő videó), ezek nem szerepelnek az ügyfélanyagban. A hőtérképezést (a mátrixban csak a múzeumoknál sárga) utólagos döntéssel vettük ki.</div>
   </div>
 </section>
 

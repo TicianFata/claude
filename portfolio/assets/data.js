@@ -85,11 +85,11 @@ window.BD = {
   groups: [
     { id: "elmeny", name: "Bejárás és élmény" },
     { id: "legi", name: "Légi és környezeti nézet" },
-    { id: "modell", name: "3D adat és modell" },
-    { id: "diag", name: "Állapotvizsgálat" }
+    { id: "modell", name: "3D adat és modell" }
   ],
 
   /* fit: "fo" = zöld (legjobban illik), "extra" = sárga (kiegészítő érték); a piros kombinációk hiányoznak */
+  /* A hőtérképezés (mátrix: csak múzeum, sárga) utólagos döntéssel kimaradt. */
   services: [
     {
       id: "pano360", group: "elmeny", name: "360°-os panorámakép", excel: "360 panoráma képek",
@@ -267,17 +267,6 @@ window.BD = {
         szalloda: "Felújítások és átalakítások digitális alapja, amely a marketingcélú felmérésből is kiindulhat.",
         muzeum: "Az épület digitális dokumentációja felújításhoz, átalakításhoz és hosszú távú archiváláshoz."
       }
-    },
-    {
-      id: "hoterkep", group: "diag", name: "Hőtérképezés", excel: "Hőtérképezés",
-      img: "assets/img/svc-hoterkep.jpg", imgSeg: { muzeum: "assets/img/muzeum-hokep.jpg" },
-      mi: "Hőkamerás felvétel, amely a felületi hőmérséklet-különbségeket színekkel jeleníti meg.",
-      mire: "Megfelelő körülmények és szakértelem mellett az épület és a kiállítási környezet állapotának vizsgálatára.",
-      kulonbseg: "Nem marketinganyag: az eredmények értelmezése a mérési körülményektől és a módszertantól függ.",
-      fit: { muzeum: "extra" },
-      use: {
-        muzeum: "Segíthet feltárni a kiállítási környezet hőtechnikai sajátosságait, például az érzékeny műtárgyak közelében."
-      }
     }
   ],
 
@@ -300,7 +289,7 @@ window.BD = {
   /* belső nézet (?belso=1): ellenőrzendő pontok */
   internal: [
     "Mely szkennerek és kamerák tartoznak az egyes szolgáltatásokhoz? A pontos típus, a korlátok és a pontosság még nincs rögzítve.",
-    "Mely szolgáltatásokat nyújtjuk házon belül, és melyekhez kell partner, külön szoftver vagy fejlesztés (pl. VR/MR/AR, 360°-os videó, hőtérképezés)?",
+    "Mely szolgáltatásokat nyújtjuk házon belül, és melyekhez kell partner, külön szoftver vagy fejlesztés (pl. VR/MR/AR, 360°-os videó)?",
     "Átadási formátumok szolgáltatásonként (webes túra, videó, képfájl, E57/LAS, OBJ/FBX, RVT/PLN/IFC). Csak a ténylegesen támogatottakat szabad feltüntetni.",
     "Pontosság, részletesség, lefedettség, elkészítési idő, árazási logika: belső iránymutatás szükséges.",
     "Saját referenciák és demóanyagok (Berci anyagai?), valamint engedély az ügyfél vagy a helyszín megnevezésére.",
